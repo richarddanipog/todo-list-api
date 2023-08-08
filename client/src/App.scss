@@ -2,6 +2,8 @@ $color-white: #fff;
 $color-grey: grey;
 $backgroud-color-dark: rgb(38, 38, 48);
 
+@import "./components/style";
+
 #root {
   background-color: $backgroud-color-dark;
 }
@@ -13,7 +15,7 @@ $backgroud-color-dark: rgb(38, 38, 48);
   justify-content: center;
   align-items: center;
 
-  .card {
+  .wrapper-card {
     height: 60vh;
     width: 40vw;
     background-color: #eff1f2;

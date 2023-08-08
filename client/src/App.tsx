@@ -3,20 +3,20 @@ import axios from "axios";
 import "./App.css";
 import { Button, Card, Container } from "react-bootstrap";
 import Task from "./components/Task";
+import { ITask } from "./interfaces/task.interface";
 
-const App = (): JSX.Element => {
-  const [tasks, setTasks] = useState<any[]>([]);
+const App = () => {
+  const [tasks, setTasks] = useState<ITask[]>([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:3001/api/todos")
-      .then((data) => setTasks(data.data))
-      .catch((error) => console.log(error));
+      .then(({ data }) => setTasks(data));
   }, []);
 
   return (
     <Container className="App">
-      <Card>
+      <Card className="wrapper-card">
         <Card.Body>
           <h1>My ToDo</h1>
           <Container className="add-task">
@@ -24,9 +24,12 @@ const App = (): JSX.Element => {
             <Button>Add</Button>
           </Container>
           <hr />
-          <Container>
-            {tasks.map((task: any) => (
-              <Task task={task} />
+
+          <Container className="p-0">
+            {tasks.map((task) => (
+              <Container key={task._id} className="task p-0">
+                <Task task={task} />
+              </Container>
             ))}
           </Container>
         </Card.Body>

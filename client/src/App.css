@@ -1,0 +1,39 @@
+#root {
+  background-color: rgb(38, 38, 48);
+}
+
+.App {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App .card {
+  height: 60vh;
+  width: 40vw;
+  background-color: #eff1f2;
+}
+.App .card h1 {
+  text-align: center;
+}
+.App .card .add-task {
+  margin-top: 3em;
+  border: 1px solid grey;
+  border-radius: 10px;
+  height: 15%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App .card .add-task-input {
+  width: 85%;
+  padding: 5px;
+  border: none;
+}
+.App .card .add-task-input:focus, .App .card .add-task-input:active {
+  outline: none;
+  border-color: initial;
+  box-shadow: none;
+}

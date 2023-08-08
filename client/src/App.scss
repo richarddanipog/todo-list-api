@@ -1,0 +1,49 @@
+$color-white: #fff;
+$color-grey: grey;
+$backgroud-color-dark: rgb(38, 38, 48);
+
+#root {
+  background-color: $backgroud-color-dark;
+}
+
+.App {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    height: 60vh;
+    width: 40vw;
+    background-color: #eff1f2;
+
+    h1 {
+      text-align: center;
+    }
+
+    .add-task {
+      margin-top: 3em;
+      border: 1px solid $color-grey;
+      border-radius: 10px;
+      height: 15%;
+      background-color: $color-white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-input {
+        width: 85%;
+        padding: 5px;
+        border: none;
+
+        &:focus,
+        &:active {
+          outline: none;
+          border-color: initial;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,24 @@
+.task-list {
+  height: 50vh;
+  overflow: scroll;
+}
+.task-list .task {
+  display: flex;
+  flex-direction: column;
+}
+.task-list .task-actions {
+  text-align: right;
+}
+.task-list .task-actions .done-icon {
+  fill: green;
+  margin-right: 1em;
+  cursor: pointer;
+}
+.task-list .task-actions .delete-icon {
+  fill: red;
+  cursor: pointer;
+}
+
 #root {
   background-color: rgb(38, 38, 48);
 }
@@ -10,9 +31,12 @@
   align-items: center;
 }
 .App .wrapper-card {
-  height: 60vh;
+  height: 80vh;
   width: 40vw;
   background-color: #eff1f2;
+}
+.App .wrapper-card .card-body {
+  overflow: hidden;
 }
 .App .wrapper-card h1 {
   text-align: center;

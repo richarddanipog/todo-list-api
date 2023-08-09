@@ -2,7 +2,7 @@ $color-white: #fff;
 $color-grey: grey;
 $backgroud-color-dark: rgb(38, 38, 48);
 
-@import "./components/style";
+@import "./components/_style.scss";
 
 #root {
   background-color: $backgroud-color-dark;
@@ -16,9 +16,13 @@ $backgroud-color-dark: rgb(38, 38, 48);
   align-items: center;
 
   .wrapper-card {
-    height: 60vh;
+    height: 80vh;
     width: 40vw;
     background-color: #eff1f2;
+
+    .card-body {
+      overflow: hidden;
+    }
 
     h1 {
       text-align: center;

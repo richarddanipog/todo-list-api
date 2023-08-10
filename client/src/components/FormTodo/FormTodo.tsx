@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { createTodoAsync } from "../../utils/api/todosApi";
 import { Button, Container } from "react-bootstrap";
@@ -8,21 +8,25 @@ const FormTodo = (): JSX.Element => {
   const [description, setDescription] = useState<string>("");
   const dispatch = useDispatch();
 
-  const onChangeTitle = (e: ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.target.value);
+  const onChangeTitle = ({
+    target: { value },
+  }: ChangeEvent<HTMLInputElement>) => {
+    setTitle(value);
   };
 
-  const onChangeDescription = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setDescription(e.target.value);
+  const onChangeDescription = ({
+    target: { value },
+  }: ChangeEvent<HTMLTextAreaElement>) => {
+    setDescription(value);
   };
 
-  const addTodo = () => {
-    const result = {
+  const addTodo = (): void => {
+    const newTodo = {
       title,
       description,
     };
 
-    dispatch(createTodoAsync(result));
+    dispatch(createTodoAsync(newTodo));
     setTitle("");
     setDescription("");
   };

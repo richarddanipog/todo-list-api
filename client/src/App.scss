@@ -32,7 +32,7 @@ $backgroud-color-dark: rgb(38, 38, 48);
       margin-top: 3em;
       border: 1px solid $color-grey;
       border-radius: 10px;
-      height: 15%;
+      height: 10%;
       background-color: $color-white;
       display: flex;
       justify-content: center;
@@ -40,7 +40,6 @@ $backgroud-color-dark: rgb(38, 38, 48);
 
       &-input {
         width: 85%;
-        padding: 5px;
         border: none;
 
         &:focus,

@@ -1,12 +1,15 @@
 import { Card, Container } from "react-bootstrap";
-import { ITask } from "../interfaces/task.interface";
+import { ITodo } from "../../interfaces/todo.interface";
 import { CheckSquareFill, XSquareFill } from "react-bootstrap-icons";
+import { useDispatch } from "react-redux";
+import { deleteTodoAsync } from "../../utils/api/todosApi";
 
-type TaskProps = {
-  task: ITask;
+type TodoProps = {
+  todo: ITodo;
 };
 
-const Task = ({ task }: TaskProps): JSX.Element => {
+const Todo = ({ todo }: TodoProps): JSX.Element => {
+  const dispatch = useDispatch();
   const convertDateFormat = (date: string): string => {
     const dateObject = new Date(date);
 
@@ -25,22 +28,30 @@ const Task = ({ task }: TaskProps): JSX.Element => {
     return formattedDate;
   };
 
+  const handleDelete = (todoId: string) => {
+    dispatch(deleteTodoAsync(todoId));
+  };
+
   return (
     <>
       <Card className="mt-3">
         <Card.Body className="d-flex justify-content-between align-items-center">
           <Container>
             <blockquote className="blockquote mb-0">
-              <p>{task.title}</p>
+              <p>{todo.title}</p>
               <footer className="blockquote-footer">
-                <cite title="Source Title">{task.description}</cite>
+                <cite title="Source Title">{todo.description}</cite>
               </footer>
             </blockquote>
-            <span>{convertDateFormat(task.createdAt)}</span>
+            <span>{convertDateFormat(todo.createdAt)}</span>
           </Container>
           <Container className="task-actions">
             <CheckSquareFill className="done-icon" size={30} />
-            <XSquareFill className="delete-icon" size={30} />
+            <XSquareFill
+              className="delete-icon"
+              size={30}
+              onClick={() => handleDelete(todo._id)}
+            />
           </Container>
         </Card.Body>
       </Card>
@@ -48,4 +59,4 @@ const Task = ({ task }: TaskProps): JSX.Element => {
   );
 };
 
-export default Task;
+export default Todo;

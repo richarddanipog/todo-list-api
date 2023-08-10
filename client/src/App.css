@@ -45,7 +45,7 @@
   margin-top: 3em;
   border: 1px solid grey;
   border-radius: 10px;
-  height: 15%;
+  height: 10%;
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -53,7 +53,6 @@
 }
 .App .wrapper-card .add-task-input {
   width: 85%;
-  padding: 5px;
   border: none;
 }
 .App .wrapper-card .add-task-input:focus, .App .wrapper-card .add-task-input:active {

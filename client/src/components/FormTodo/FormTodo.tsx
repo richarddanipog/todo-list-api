@@ -1,11 +1,12 @@
 import { ChangeEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { createTodoAsync } from "../../utils/api/todosApi";
-import { Button, Container } from "react-bootstrap";
+import { Button, FloatingLabel, Form } from "react-bootstrap";
 
 const FormTodo = (): JSX.Element => {
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
+
   const dispatch = useDispatch();
 
   const onChangeTitle = ({
@@ -20,11 +21,16 @@ const FormTodo = (): JSX.Element => {
     setDescription(value);
   };
 
-  const addTodo = (): void => {
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
     const newTodo = {
       title,
       description,
     };
+
+    if (!description) {
+      newTodo.description = "No description.";
+    }
 
     dispatch(createTodoAsync(newTodo));
     setTitle("");
@@ -32,26 +38,36 @@ const FormTodo = (): JSX.Element => {
   };
 
   return (
-    <>
-      <Container className="add-task">
-        <input
+    <Form className="mt-4 form-todo" onSubmit={handleSubmit}>
+      <FloatingLabel
+        controlId="floatingTextarea"
+        label="Title"
+        className="mb-3"
+      >
+        <Form.Control
           onChange={onChangeTitle}
-          className="add-task-input"
-          placeholder="Add New Task..."
           value={title}
+          as="textarea"
+          placeholder="Leave a comment here"
+          required
         />
-        <Button onClick={addTodo}>Add</Button>
-      </Container>
-      {title && (
-        <textarea
+      </FloatingLabel>
+
+      <FloatingLabel
+        className="mb-3"
+        controlId="floatingTextarea2"
+        label="Description (optional)"
+      >
+        <Form.Control
           onChange={onChangeDescription}
           value={description}
-          className="mt-3"
-          cols={40}
+          as="textarea"
           placeholder="Add Description (optional)..."
+          style={{ height: "100px" }}
         />
-      )}
-    </>
+      </FloatingLabel>
+      <Button type="submit">Submit</Button>
+    </Form>
   );
 };
 

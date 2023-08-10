@@ -20,8 +20,7 @@
 }
 
 .App .wrapper-card {
-  height: 80vh;
-  width: 40vw;
+  width: 30vw;
   background-color: #eff1f2;
 }
 .App .wrapper-card .card-body {
@@ -34,21 +33,20 @@
   border-radius: 10px;
   padding: 1em;
 }
-.App .wrapper-card .add-task {
-  margin-top: 3em;
+.App .wrapper-card .form-todo .add-task {
   border: 1px solid grey;
   border-radius: 10px;
-  height: 10%;
+  height: 100%;
   background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.App .wrapper-card .add-task-input {
+.App .wrapper-card .form-todo .add-task-input {
   width: 85%;
   border: none;
 }
-.App .wrapper-card .add-task-input:focus, .App .wrapper-card .add-task-input:active {
+.App .wrapper-card .form-todo .add-task-input:focus, .App .wrapper-card .form-todo .add-task-input:active {
   outline: none;
   border-color: initial;
   box-shadow: none;

@@ -3,8 +3,7 @@ $color-grey: grey;
 $backgroud-color-dark: rgb(38, 38, 48);
 
 .App .wrapper-card {
-  height: 80vh;
-  width: 40vw;
+  width: 30vw;
   background-color: #eff1f2;
 
   .card-body {
@@ -20,25 +19,26 @@ $backgroud-color-dark: rgb(38, 38, 48);
     padding: 1em;
   }
 
-  .add-task {
-    margin-top: 3em;
-    border: 1px solid $color-grey;
-    border-radius: 10px;
-    height: 10%;
-    background-color: $color-white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .form-todo {
+    .add-task {
+      border: 1px solid $color-grey;
+      border-radius: 10px;
+      height: 100%;
+      background-color: $color-white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    &-input {
-      width: 85%;
-      border: none;
+      &-input {
+        width: 85%;
+        border: none;
 
-      &:focus,
-      &:active {
-        outline: none;
-        border-color: initial;
-        box-shadow: none;
+        &:focus,
+        &:active {
+          outline: none;
+          border-color: initial;
+          box-shadow: none;
+        }
       }
     }
   }

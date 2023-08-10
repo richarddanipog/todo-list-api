@@ -1,0 +1,23 @@
+.task-list {
+  height: 50vh;
+  overflow: scroll;
+
+  .task {
+    display: flex;
+    flex-direction: column;
+
+    &-actions {
+      text-align: right;
+
+      .done-icon {
+        fill: green;
+        margin-right: 1em;
+        cursor: pointer;
+      }
+      .delete-icon {
+        fill: red;
+        cursor: pointer;
+      }
+    }
+  }
+}

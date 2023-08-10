@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const cors = require("cors");
 const todoRoutes = require("./routes/todoRoutes");
 const logger = require("./helpers/logger");
 const loggingMiddleware = require("./middleware/loggerMiddleware");
@@ -29,6 +30,9 @@ db.on("error", (error) => {
 db.once("open", () => {
   logger.info("Connected to MongoDB...");
 });
+
+// Use CORS middleware
+app.use(cors());
 
 // Add the logging middleware to log every request
 app.use(loggingMiddleware);

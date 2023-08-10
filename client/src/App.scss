@@ -1,0 +1,14 @@
+@import "./components/Todo/_styles.scss";
+@import "./components/FormTodo/_styles.scss";
+
+#root {
+  background-color: $backgroud-color-dark;
+}
+
+.App {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,67 @@
+.task-list {
+  height: 50vh;
+  overflow: scroll;
+}
+.task-list .task {
+  display: flex;
+  flex-direction: column;
+}
+.task-list .task-actions {
+  text-align: right;
+}
+.task-list .task-actions .done-icon {
+  fill: green;
+  margin-right: 1em;
+  cursor: pointer;
+}
+.task-list .task-actions .delete-icon {
+  fill: red;
+  cursor: pointer;
+}
+
+.App .wrapper-card {
+  height: 80vh;
+  width: 40vw;
+  background-color: #eff1f2;
+}
+.App .wrapper-card .card-body {
+  overflow: hidden;
+}
+.App .wrapper-card h1 {
+  text-align: center;
+}
+.App .wrapper-card textarea {
+  border-radius: 10px;
+  padding: 1em;
+}
+.App .wrapper-card .add-task {
+  margin-top: 3em;
+  border: 1px solid grey;
+  border-radius: 10px;
+  height: 10%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App .wrapper-card .add-task-input {
+  width: 85%;
+  border: none;
+}
+.App .wrapper-card .add-task-input:focus, .App .wrapper-card .add-task-input:active {
+  outline: none;
+  border-color: initial;
+  box-shadow: none;
+}
+
+#root {
+  background-color: rgb(38, 38, 48);
+}
+
+.App {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

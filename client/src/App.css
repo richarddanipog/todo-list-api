@@ -19,17 +19,6 @@
   cursor: pointer;
 }
 
-#root {
-  background-color: rgb(38, 38, 48);
-}
-
-.App {
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .App .wrapper-card {
   height: 80vh;
   width: 40vw;
@@ -40,6 +29,10 @@
 }
 .App .wrapper-card h1 {
   text-align: center;
+}
+.App .wrapper-card textarea {
+  border-radius: 10px;
+  padding: 1em;
 }
 .App .wrapper-card .add-task {
   margin-top: 3em;
@@ -59,4 +52,16 @@
   outline: none;
   border-color: initial;
   box-shadow: none;
+}
+
+#root {
+  background-color: rgb(38, 38, 48);
+}
+
+.App {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

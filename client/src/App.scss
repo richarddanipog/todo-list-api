@@ -1,8 +1,5 @@
-$color-white: #fff;
-$color-grey: grey;
-$backgroud-color-dark: rgb(38, 38, 48);
-
-@import "./components/_style.scss";
+@import "./components/Todo/_styles.scss";
+@import "./components/FormTodo/_styles.scss";
 
 #root {
   background-color: $backgroud-color-dark;
@@ -14,41 +11,4 @@ $backgroud-color-dark: rgb(38, 38, 48);
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .wrapper-card {
-    height: 80vh;
-    width: 40vw;
-    background-color: #eff1f2;
-
-    .card-body {
-      overflow: hidden;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    .add-task {
-      margin-top: 3em;
-      border: 1px solid $color-grey;
-      border-radius: 10px;
-      height: 10%;
-      background-color: $color-white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      &-input {
-        width: 85%;
-        border: none;
-
-        &:focus,
-        &:active {
-          outline: none;
-          border-color: initial;
-          box-shadow: none;
-        }
-      }
-    }
-  }
 }

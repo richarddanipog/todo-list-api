@@ -43,13 +43,11 @@ const FormTodo = (): JSX.Element => {
         <Button onClick={addTodo}>Add</Button>
       </Container>
       {title && (
-        // Need to Style this element...
         <textarea
           onChange={onChangeDescription}
           value={description}
           className="mt-3"
           cols={40}
-          rows={4}
           placeholder="Add Description (optional)..."
         />
       )}

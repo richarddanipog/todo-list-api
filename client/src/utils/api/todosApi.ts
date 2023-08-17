@@ -10,10 +10,6 @@ export const fetchTodosAsync: any = createAsyncThunk(
   }
 );
 
-export const createTodo = async (newTodo: any) => {
-  return apiPost("api/todos", newTodo);
-};
-
 export const createTodoAsync: any = createAsyncThunk(
   "todos/createTodo",
   async (newTodo: { title: string; decription: string }) => {

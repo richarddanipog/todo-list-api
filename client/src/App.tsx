@@ -1,23 +1,23 @@
 import "./App.css";
-import { Card, Container } from "react-bootstrap";
-import { FileTextFill } from "react-bootstrap-icons";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import TodoList from "./features/todos/TodoList";
 import FormTodo from "./components/FormTodo/FormTodo";
 
 const App = () => {
   return (
     <Container className="App">
-      <Card className="wrapper-card">
-        <Card.Body>
-          <h1>
-            <FileTextFill style={{ fill: "orange" }} size={35} />
-            My ToDo
-          </h1>
+      <Row>
+        <Col md={4}>
           <FormTodo />
-          <hr />
-          <TodoList />
-        </Card.Body>
-      </Card>
+        </Col>
+        <Col md={8}>
+          <Card className="wrapper-card">
+            <Card.Body>
+              <TodoList />
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </Container>
   );
 };

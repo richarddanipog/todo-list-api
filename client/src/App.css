@@ -20,7 +20,8 @@
 }
 
 .App .wrapper-card {
-  width: 30vw;
+  width: 50vw;
+  height: 85vh;
   background-color: #eff1f2;
 }
 .App .wrapper-card .card-body {
@@ -59,7 +60,5 @@
 .App {
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1rem;
 }

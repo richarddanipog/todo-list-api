@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import Task from "../../components/Todo/Todo";
+import Todo from "../../components/Todo/Todo";
 import { ITodo } from "../../interfaces/todo.interface";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../app/store";
@@ -16,13 +16,10 @@ const TodoList = () => {
 
   return (
     <>
-      <Container>
-        <h6>Total ToDo's - ( {todos.length} )</h6>
-      </Container>
-      <Container className="task-list p-0">
+      <Container className="task-list p-0 h-100">
         {todos.map((todo: ITodo) => (
           <Container key={todo._id} className="task p-0">
-            <Task todo={todo} />
+            <Todo todo={todo} />
           </Container>
         ))}
       </Container>

@@ -1,11 +1,15 @@
 import { ChangeEvent, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createTodoAsync } from "../../utils/api/todosApi";
 import { Button, Card, FloatingLabel, Form } from "react-bootstrap";
+import { RootState } from "../../app/store";
 
 const FormTodo = (): JSX.Element => {
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
+  const totalTodos: number = useSelector(
+    (state: RootState) => state.todos.totalTodos
+  );
 
   const dispatch = useDispatch();
 
@@ -41,7 +45,8 @@ const FormTodo = (): JSX.Element => {
     <Card>
       <Card.Body>
         <Form className="form-todo" onSubmit={handleSubmit}>
-          <h2>My Todo`s </h2>
+          <h2>Todo List</h2>
+          <div className="mb-3">Total ({totalTodos})</div>
           <FloatingLabel
             controlId="floatingTextarea"
             label="Title"
@@ -69,7 +74,7 @@ const FormTodo = (): JSX.Element => {
               style={{ height: "100px" }}
             />
           </FloatingLabel>
-          <Button type="submit">Submit</Button>
+          <Button type="submit">Add</Button>
         </Form>
       </Card.Body>
     </Card>
